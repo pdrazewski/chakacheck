@@ -8,6 +8,27 @@ var config = {
 var firebaseapp = firebase.initializeApp(config);
 var itemsRef = firebase.database().ref("0");
 
+
+function loginWithGoogle() {
+  // Instantiate the Google authentication provider
+  var provider = new firebase.auth.GoogleAuthProvider();
+  // Handle the authentication request using the Popup method
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    var user = result.user;
+  }).catch(function(error) {
+    console.log(error);
+  });
+}
+
+function logout() {
+  localStorage.removeItem('profile');
+  firebase.auth().signOut().then(function() {
+    console.log("Signout Successful")
+  }, function(error) {
+    console.log(error);
+  });
+}
+
 console.dir(itemsRef) 
 
 new Vue({
