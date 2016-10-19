@@ -1,0 +1,10 @@
+**/.sass-cache/
+**/node_modules/
+**/psd/
+**/*.psd
+psd
+npm-debug.log
+.tmp/
+.idea
+**/bower_components/
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" class="root">
+<head>
+  	<meta charset="UTF-8"> 
+  	<title>Chakacheck.io</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+  	<link rel="stylesheet" href="assets/_dist/style.css">
+</head>
+<body> 
+
+	<div id="app">
+	    <ul>
+	    	<li v-for="item in items">
+	        	{{ item }}
+	        	<button @click="removeTodo(item['.key'])">X</button>
+	      	</li>
+	    </ul>
+	    <form @submit.prevent="addTodo">
+	      	<input v-model="newTodo" />
+	      	<button>Add #{{ items.length }}</button>
+	    </form>
+	</div>
+
+	<script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>
+	<script src="//cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+	<script src="//www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+	<script src="//cdn.jsdelivr.net/vuefire/latest/vuefire.min.js"></script>
+	<script src="assets/_dist/app.js"></script>
+</body>
+</html>
